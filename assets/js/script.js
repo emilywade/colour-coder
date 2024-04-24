@@ -22,3 +22,8 @@ for (let i=0; i<colourCount; i++) {
     card.innerHTML = shuffledColours[i]
     document.querySelector('.game').appendChild(card);
 }
+
+// reload game function
+function reloadGame() {
+    window.location.reload()
+}
