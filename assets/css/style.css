@@ -72,6 +72,7 @@ body {
     background-color: #333333;
     transform: rotateY(0deg);
     transition: 0.25s;
+    backface-visibility: hidden;
 }
 
 .card.flipped {
