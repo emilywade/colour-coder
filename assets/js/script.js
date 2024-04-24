@@ -1,5 +1,5 @@
 // define the list of colours that the game will contain
-let colours = ['#00FFFF', '#7FFFD4', '#0000FF', '#8A2BE2', '#7FFF00', '#FF1493']
+let colours = ['#ffc700', '#7fffd4', '#0000ff', '#822b54', '#ff1493', '#00ff00']
 
 // define function to duplicate this list
 function duplicateElements(arr) {
