@@ -20,6 +20,11 @@ for (let i=0; i<colourCount; i++) {
     let card = document.createElement('div')
     card.className = 'card'
     card.style.backgroundColor = shuffledColours[i]
+
+    card.onclick = function() {
+        this.classList.add('flipped')
+    }
+
     document.querySelector('.game').appendChild(card);
 }
 
