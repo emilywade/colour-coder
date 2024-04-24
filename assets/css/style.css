@@ -79,7 +79,7 @@ body {
     transform: rotateY(0deg);
 }
 
-.flipped:after {
+.flipped:after, .cardMatch:after {
     transform: rotateY(180deg);
 }
 

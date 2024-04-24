@@ -23,6 +23,33 @@ for (let i=0; i<colourCount; i++) {
 
     card.onclick = function() {
         this.classList.add('flipped')
+        setTimeout(function(){
+            if(document.querySelectorAll('.flipped').length > 1){
+                let flippedOne = document.querySelectorAll('.flipped')[0];
+                let flippedTwo = document.querySelectorAll('.flipped')[1];
+    
+                let bgColorOne = window.getComputedStyle(flippedOne).backgroundColor;
+                let bgColorTwo = window.getComputedStyle(flippedTwo).backgroundColor;
+    
+                // console.log(bgColorOne);
+                // console.log(bgColorTwo);
+    
+                if(bgColorOne == bgColorTwo){
+                    document.querySelectorAll('.flipped')[0].classList.add('cardMatch')
+                    document.querySelectorAll('.flipped')[1].classList.add('cardMatch')
+                    
+                    document.querySelectorAll('.flipped')[1].classList.remove('flipped')
+                    document.querySelectorAll('.flipped')[0].classList.remove('flipped')
+    
+                    if(document.querySelectorAll('.cardMatch').length == colourCount){
+                        alert('win message');
+                    }
+                } else {
+                    document.querySelectorAll('.flipped')[1].classList.remove('flipped')
+                    document.querySelectorAll('.flipped')[0].classList.remove('flipped')
+                }
+            }
+        },500)   
     }
 
     document.querySelector('.game').appendChild(card);
