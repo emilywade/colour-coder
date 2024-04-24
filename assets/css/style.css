@@ -13,3 +13,27 @@ body {
     color:#ffffff;
     font-family: "M PLUS 1 Code", monospace;
 }
+
+.game-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #555555;
+    padding: 60px;
+}
+
+#logo {
+    margin-bottom: 40px;
+}
+
+.play-game {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ebb506;
+    color: #333333;
+    font-weight: 800;
+    text-transform: uppercase;
+}
