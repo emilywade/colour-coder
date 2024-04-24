@@ -61,7 +61,14 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    color:#fff;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #333333;
+    transform: rotateY(0deg);
 }
 
 /* Media query for tablets */
