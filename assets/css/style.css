@@ -61,6 +61,8 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    transform: rotateY(180deg);
+    transition: 0.25s;
 }
 
 .card::after {
@@ -68,6 +70,11 @@ body {
     position: absolute;
     inset: 0;
     background-color: #333333;
+    transform: rotateY(0deg);
+    transition: 0.25s;
+}
+
+.card.flipped {
     transform: rotateY(0deg);
 }
 
