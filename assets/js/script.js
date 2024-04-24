@@ -19,7 +19,7 @@ let colourCount = shuffledColours.length;
 for (let i=0; i<colourCount; i++) {
     let card = document.createElement('div')
     card.className = 'card'
-    card.innerHTML = shuffledColours[i]
+    card.style.backgroundColor = shuffledColours[i]
     document.querySelector('.game').appendChild(card);
 }
 
