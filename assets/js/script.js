@@ -15,3 +15,10 @@ let shuffledColours = duplicatedColours.sort(() => Math.random() - 0.5);
 // store length of list
 let colourCount = shuffledColours.length;
 
+// game play
+for (let i=0; i<colourCount; i++) {
+    let card = document.createElement('div')
+    card.className = 'card'
+    card.innerHTML = shuffledColours[i]
+    document.querySelector('.game').appendChild(card);
+}
