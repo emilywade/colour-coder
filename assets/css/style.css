@@ -22,18 +22,25 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: #555555;
-    padding: 60px;
+    padding: 20px 0;
 }
 
 #logo {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .play-game {
-    padding: 10px;
     border-radius: 5px;
     background-color: #ebb506;
     color: #333333;
     font-weight: 800;
     text-transform: uppercase;
+}
+
+.game {
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
