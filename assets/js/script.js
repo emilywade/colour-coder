@@ -6,56 +6,62 @@ function duplicateElements(arr) {
     return arr.flatMap(item => [item, item]);
 }
 
-// duplicate each element in the original list
-let duplicatedColours = duplicateElements(colours);
-
-// randomly sort the duplicated list
-let shuffledColours = duplicatedColours.sort(() => Math.random() - 0.5);
-
-// store length of list
-let colourCount = shuffledColours.length;
-
-// game play
-for (let i=0; i<colourCount; i++) {
-    let card = document.createElement('div')
-    card.className = 'card'
-    card.style.backgroundColor = shuffledColours[i]
-
-    card.onclick = function() {
-        this.classList.add('flipped')
-        setTimeout(function(){
-            if(document.querySelectorAll('.flipped').length > 1){
-                let flippedOne = document.querySelectorAll('.flipped')[0];
-                let flippedTwo = document.querySelectorAll('.flipped')[1];
-    
-                let bgColorOne = window.getComputedStyle(flippedOne).backgroundColor;
-                let bgColorTwo = window.getComputedStyle(flippedTwo).backgroundColor;
-    
-                // console.log(bgColorOne);
-                // console.log(bgColorTwo);
-    
-                if(bgColorOne == bgColorTwo){
-                    document.querySelectorAll('.flipped')[0].classList.add('cardMatch')
-                    document.querySelectorAll('.flipped')[1].classList.add('cardMatch')
-                    
-                    document.querySelectorAll('.flipped')[1].classList.remove('flipped')
-                    document.querySelectorAll('.flipped')[0].classList.remove('flipped')
-    
-                    if(document.querySelectorAll('.cardMatch').length == colourCount){
-                        alert('win message');
-                    }
-                } else {
-                    document.querySelectorAll('.flipped')[1].classList.remove('flipped')
-                    document.querySelectorAll('.flipped')[0].classList.remove('flipped')
-                }
-            }
-        },500)   
-    }
-
-    document.querySelector('.game').appendChild(card);
+// define function to randomly sort the duplicated list
+function shuffleColours(arr) {
+    return arr.sort(() => Math.random() - 0.5);
 }
 
-// reload game function
+// define function to create cards
+function createCards(colourArray) {
+    let colourCount = colourArray.length;
+    let gameContainer = document.querySelector('.game');
+
+    for (let i=0; i<colourCount; i++) {
+        let card = document.createElement('div');
+        card.className = 'card';
+        card.style.backgroundColor = colourArray[i];
+        card.onclick = handleCardClick;
+        gameContainer.appendChild(card);
+    }
+}
+
+// define function to handle card click 
+function handleCardClick() {
+    this.classList.add('flipped');
+    setTimeout(checkForMatch, 500);
+}
+
+// define function to check for card match
+function checkForMatch() {
+    let flippedCards = document.querySelectorAll('.flipped');
+    if (flippedCards.length > 1) {
+        let bgColorOne = window.getComputedStyle(flippedCards[0]).backgroundColor;
+        let bgColorTwo = window.getComputedStyle(flippedCards[1]).backgroundColor;
+
+        if (bgColorOne === bgColorTwo) {
+            flippedCards.forEach(card => card.classList.add('cardMatch'));
+            flippedCards.forEach(card => card.classList.remove('flipped'));
+
+            if (document.querySelectorAll('.cardMatch').length === colours.length * 2) {
+                alert("Congratulations! You are a Colour Coder! :)")
+            }
+        } else {
+            flippedCards.forEach(card => card.classList.remove('flipped'))
+        }
+    }
+}
+
+
+// define reload game function
 function reloadGame() {
     window.location.reload()
 }
+
+// define function to initialise game 
+function initialiseGame() {
+    let duplicatedColours = duplicateElements(colours);
+    let shuffledColours = shuffleColours(duplicatedColours);
+    createCards(shuffledColours);
+}
+
+initialiseGame();
