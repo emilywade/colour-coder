@@ -1,5 +1,5 @@
 // define the list of colours that the game will contain
-let colours = ['#ffc700', '#7fffd4', '#0000ff', '#822b54', '#ff1493', '#00ff00']
+let colours = ['#ffc700', '#7fffd4', '#0000ff', '#822b54', '#ff1493', '#00ff00'];
 
 // define function to duplicate this list
 function duplicateElements(arr) {
@@ -43,10 +43,10 @@ function checkForMatch() {
             flippedCards.forEach(card => card.classList.remove('flipped'));
 
             if (document.querySelectorAll('.cardMatch').length === colours.length * 2) {
-                alert("Congratulations! You are a Colour Coder! :)")
+                alert("Congratulations! You are a Colour Coder! :)");
             }
         } else {
-            flippedCards.forEach(card => card.classList.remove('flipped'))
+            flippedCards.forEach(card => card.classList.remove('flipped'));
         }
     }
 }
@@ -54,7 +54,7 @@ function checkForMatch() {
 
 // define reload game function
 function reloadGame() {
-    window.location.reload()
+    window.location.reload();
 }
 
 // define function to initialise game 
