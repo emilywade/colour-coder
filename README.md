@@ -2,7 +2,7 @@
 
 Colour Coder is an interactive game where users can test their memory skills to match up the pairs of colours. The game is aimed for all ages - with a particular spotlight on kids and the elderly. My Grandma has suffered with dementia for the last few years and the main purpose for creating this game was to give her another hobby which was challenging but not impossible. 
 
-![Responsive Mockup](assets/images/readme/responsive.png)
+![Responsive Mockup](assets/images/responsive.png)
 
 ## Features 
 
@@ -13,7 +13,7 @@ Colour Coder is an interactive game where users can test their memory skills to 
   - The 'PLAY GAME' button is the only thing in a different colour before cards are turned so the user immediately knows how to start the game.
   - When hovering over the cards or button, the cursor changes to a pointer to make it clear that these items are clickable.
 
-![Nav Bar](assets/images/readme/game-layout.png)
+![Nav Bar](assets/images/game-layout.png)
 
 - __Game Play__
 
@@ -25,7 +25,7 @@ Colour Coder is an interactive game where users can test their memory skills to 
   - The PLAY GAME button calls a function to reload the game.
   - After each click it checks for a game win, and if all pairs are matched then an alert is triggered. 
 
-![Header](assets/images/readme/alert-message.png)
+![Header](assets/images/alert-message.png)
 
 
 ## Testing 
@@ -58,7 +58,7 @@ Colour Coder is an interactive game where users can test their memory skills to 
 - Accessibility
   - Colours and fonts chosen are easy to read and accessible (checked using lighthouse in devtools)
 
-![Accessibility](assets/images/readme/accessibility.png)
+![Accessibility](assets/images/accessibility.png)
 
 ### Unfixed Bugs
 
